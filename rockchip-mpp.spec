@@ -12,6 +12,7 @@ Group:		Libraries
 #Source0Download: https://github.com/rockchip-linux/mpp/releases
 Source0:	https://github.com/rockchip-linux/mpp/archive/release_%{version}/mpp-%{version}.tar.gz
 # Source0-md5:	6c2c941ebc506e6a3bd7d911dd8dc184
+Patch0:		%{name}-no-march.patch
 URL:		http://opensource.rock-chips.com/wiki_Mpp
 BuildRequires:	cmake >= 2.8.8
 BuildRequires:	libstdc++-devel
@@ -50,6 +51,7 @@ Statyczne biblioteki Rockchip MPP.
 
 %prep
 %setup -q -n mpp-release_%{version}
+%patch0 -p1
 
 %build
 # "build" directory is already occupied, so use "builddir"

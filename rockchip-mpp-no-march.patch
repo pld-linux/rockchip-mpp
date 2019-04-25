@@ -1,0 +1,13 @@
+--- mpp-release_20171218/CMakeLists.txt.orig	2017-12-19 12:46:36.000000000 +0100
++++ mpp-release_20171218/CMakeLists.txt	2019-04-25 19:46:31.935110835 +0200
+@@ -192,10 +192,6 @@
+         elseif(ARMEABI_V7A_HARDFP)
+             add_definitions(-march=armv7-a -mfloat-abi=hard -mfpu=neon)
+         endif()
+-    else()
+-        if(X86 AND NOT X64)
+-            add_definitions(-march=i686)
+-        endif()
+     endif()
+ 
+     if($(CMAKE_BUILD_TYPE) MATCHES "Release")
